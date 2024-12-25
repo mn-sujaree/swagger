@@ -1,12 +1,13 @@
-# TODO App with SQLite
+# Swagger App with SQLite
 
-This is a simple TODO application API built with Node.js, Express, and SQLite. It provides CRUD (Create, Read, Update, Delete) operations for managing TODO tasks.
+This is a simple Swagger application API built with Node.js, Express, and SQLite. It provides CRUD (Create, Read, Update, Delete) operations for managing TODO tasks, with API documentation powered by Swagger.
 
 ## Features
 - Create a new TODO
 - Retrieve all TODOs
 - Update an existing TODO
 - Delete a TODO
+- Interactive API documentation with Swagger UI
 
 ## Prerequisites
 - [Node.js](https://nodejs.org/) (v14 or later)
@@ -16,8 +17,8 @@ This is a simple TODO application API built with Node.js, Express, and SQLite. I
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/todo-app.git
-   cd todo-app
+   git clone https://github.com/your-username/swagger.git
+   cd swagger
    ```
 
 2. Install dependencies:
@@ -40,6 +41,9 @@ This is a simple TODO application API built with Node.js, Express, and SQLite. I
    ```
 
 2. The server will run at `http://localhost:3000`
+
+3. Access the Swagger documentation:
+   - Visit: `http://localhost:3000/api-docs`
 
 ### API Endpoints
 
@@ -107,10 +111,9 @@ swagger/
 ├── db/
 │   └── database.js       # SQLite database connection and setup
 ├── routes/
-│   └── todoRoutes.js     # API routes for TODOs
+│   ├── todoRoutes.js     # API routes for TODOs
+│   └── swagger.js        # Swagger configuration
 ├── app.js                # Main application file
 ├── package.json          # Project metadata and dependencies
 └── README.md             # Project documentation
 ```
-
----

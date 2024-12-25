@@ -67,3 +67,107 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Todo:
+ *       type: object
+ *       required:
+ *         - title
+ *       properties:
+ *         id:
+ *           type: integer
+ *           description: The auto-generated ID of the TODO
+ *         title:
+ *           type: string
+ *           description: The title of the TODO
+ *         description:
+ *           type: string
+ *           description: The description of the TODO
+ *         completed:
+ *           type: boolean
+ *           description: The status of the TODO
+ *       example:
+ *         id: 1
+ *         title: Learn Swagger
+ *         description: Implement Swagger for API documentation
+ *         completed: false
+ */
+
+/**
+ * @swagger
+ * /todos:
+ *   get:
+ *     summary: Returns a list of all TODOs
+ *     responses:
+ *       200:
+ *         description: The list of TODOs
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Todo'
+ */
+
+/**
+ * @swagger
+ * /todos:
+ *   post:
+ *     summary: Creates a new TODO
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Todo'
+ *     responses:
+ *       201:
+ *         description: The TODO was successfully created
+ */
+
+/**
+ * @swagger
+ * /todos/{id}:
+ *   put:
+ *     summary: Updates an existing TODO
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: The TODO ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Todo'
+ *     responses:
+ *       200:
+ *         description: The TODO was successfully updated
+ *       404:
+ *         description: The TODO was not found
+ */
+
+/**
+ * @swagger
+ * /todos/{id}:
+ *   delete:
+ *     summary: Deletes a TODO
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: The TODO ID
+ *     responses:
+ *       204:
+ *         description: The TODO was successfully deleted
+ *       404:
+ *         description: The TODO was not found
+ */
