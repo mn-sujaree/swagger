@@ -103,7 +103,7 @@ This is a simple TODO application API built with Node.js, Express, and SQLite. I
 
 ## Project Structure
 ```
-todo-app/
+swagger/
 ├── db/
 │   └── database.js       # SQLite database connection and setup
 ├── routes/
